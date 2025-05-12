@@ -4,13 +4,11 @@ import CoreData
 struct CalendarView: View {
   @Environment(\.managedObjectContext) private var viewContext
 
-  // All your habit completions
   @FetchRequest(
     entity: CompletionEntity.entity(),
     sortDescriptors: [NSSortDescriptor(keyPath: \CompletionEntity.date, ascending: true)]
   ) private var completions: FetchedResults<CompletionEntity>
 
-  // All your habits (to know how many should be done each slot)
   @FetchRequest(
     entity: HabitEntity.entity(),
     sortDescriptors: []

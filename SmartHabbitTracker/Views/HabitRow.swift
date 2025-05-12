@@ -42,11 +42,11 @@ struct HabitRow: View {
     private func toggleCompletion() {
         guard let ctx = habit.managedObjectContext else { return }
         
-        // 1. Toggle completion state
+
         let now = Date()
         habit.isCompleted.toggle()
         
-        // 2. Record or remove a CompletionEntity
+
         let todayStart = Calendar.current.startOfDay(for: now)
         let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: todayStart)!
         let req: NSFetchRequest<CompletionEntity> = CompletionEntity.fetchRequest()
@@ -70,8 +70,6 @@ struct HabitRow: View {
             }
         }
         
-        // 3. Recompute streak based on consecutive days
-        //    Count how many days in a row ending today have at least one completion
         let daysBack = (0...6).map { Calendar.current.date(byAdding: .day, value: -$0, to: todayStart)! }
         var newStreak = 0
         for day in daysBack {
@@ -94,7 +92,7 @@ struct HabitRow: View {
             }
         }
         
-        // 4. Bonus: if user completed *all three* slots today, add +1 bonus
+
         let todayCompletions = try! ctx.fetch({
             let r = CompletionEntity.fetchRequest()
             r.predicate = NSPredicate(

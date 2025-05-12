@@ -48,7 +48,7 @@ struct EditHabitView: View {
   private func saveChanges() {
     habit.name       = name
     habit.timeOfDay  = selected.rawValue
-    // optionally adjust order if timeOfDay changed…
+    // optionally adjust order if timeOfDay changed
     try? viewContext.save()
   }
 }
