@@ -66,6 +66,9 @@ struct HomeView: View {
             .listStyle(.plain)
             .scrollContentBackground(.hidden)
             .background(Color.clear)
+
+
+
           }
         }
         .navigationTitle("Your Habits")
