@@ -8,7 +8,6 @@ struct NewHabitView: View {
   @State private var name               = ""
   @State private var selected: TimeOfDay = .Morning
 
-  // fetch *all* habits so we can compute a new order
   @FetchRequest(entity: HabitEntity.entity(), sortDescriptors: [])
   private var allHabits: FetchedResults<HabitEntity>
 
