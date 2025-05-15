@@ -102,7 +102,12 @@ struct HomeView: View {
       .sheet(isPresented: $showingCalendar) {
         CalendarView()
           .environment(\.managedObjectContext, viewContext)
+          // make the sheet only medium height (≈ half screen)
+          .presentationDetents([.medium])
+          // show the little grab-bar so users know they can pull it up/down
+          .presentationDragIndicator(.visible)
       }
+
 
       .sheet(isPresented: $showingAddHabit) {
         NewHabitView()

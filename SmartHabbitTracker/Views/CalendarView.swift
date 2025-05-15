@@ -22,9 +22,9 @@ struct CalendarView: View {
       monthHeader
       weekdayHeader
       daysGrid
-      Spacer()
     }
     .padding()
+    .fixedSize(horizontal: false, vertical: true)
   }
 
   // MARK: – Month selector

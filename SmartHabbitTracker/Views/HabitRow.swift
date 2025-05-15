@@ -22,14 +22,14 @@ struct HabitRow: View {
 
       Spacer()
 
-      if habit.streak > 0 {
-        HStack(spacing: 4) {
-          Image(systemName: "flame.fill")
-          Text("\(habit.streak)")
-        }
-        .font(.subheadline).bold()
-        .foregroundColor(.orange)
-      }
+//      if habit.streak > 0 {
+//        HStack(spacing: 4) {
+//          Image(systemName: "flame.fill")
+//          Text("\(habit.streak)")
+//        }
+//        .font(.subheadline).bold()
+//        .foregroundColor(.orange)
+//      }
     }
     .padding(.vertical, 12)
     .padding(.horizontal)
